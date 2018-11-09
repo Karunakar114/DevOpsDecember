@@ -1,8 +1,8 @@
 # Assuming the following .
 
-#### `Tomcat Server IP Address : 10.128.0.5`
-#### `DB Server IP Address : 10.128.0.6`
-#### `OS on both machines is CentOS 7`
+#### `Tomcat Server IP Address : 192.168.0.138`
+#### `DB Server IP Address : 192.168.0.128`
+
 
 
 # I) Tomcat Server Setup
@@ -25,12 +25,12 @@
 
 ### 2) Configure your tomcat to connect to DB.
 ```
-# vim /root/tomcat/conf/context.xml
+# vim /root/tomcat/conf/context.xml (Tomcat server )
      ### Add the following content to your file just before last line.
 <Resource name="jdbc/TestDB" auth="Container" type="javax.sql.DataSource"
                maxTotal="100" maxIdle="30" maxWaitMillis="10000"
                username="student" password="student@1" driverClassName="com.mysql.jdbc.Driver"
-               url="jdbc:mysql://10.128.0.6:3306/studentapp"/>
+               url="jdbc:mysql://192.168.0.128:3306/studentapp"/>
 
 ### Once changes are done then restart the tomcat
 # /root/tomcat/bin/shutdown.sh  (or)  # pkill java
@@ -78,7 +78,7 @@ grant all privileges on studentapp.* to 'student'@'10.128.0.5' identified by 'st
 > show databases;
 > use studentapp;
 > show tables;
-> select * from Student;
+> select * from Students;
 ```
 
 # IV) Install & Configure Web Server to connect to Application
