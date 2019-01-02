@@ -61,7 +61,7 @@ CREATE TABLE Students(student_id INT NOT NULL AUTO_INCREMENT,
 	student_year_passed VARCHAR(10) NOT NULL,
 	PRIMARY KEY (student_id)
 );
-grant all privileges on studentapp.* to 'student'@'10.128.0.5' identified by 'student@1';
+grant all privileges on studentapp.* to 'student'@'192.168.0.128' identified by 'student@1';
 
 ### Run the following command to create DB
 # mysql <studentapp.sql
@@ -70,7 +70,7 @@ grant all privileges on studentapp.* to 'student'@'10.128.0.5' identified by 'st
 # III) Verify DB Connection from Tomcat server.
 
 ```
-# mysql -h 10.128.0.6 -u student -pstudent@1
+# mysql -h 192.168.0.128 -u student -pstudent@1
 ```
 ### If the above command provides MariaDB prompt then connection is successful.
 ### Verify the DB using following commands.
